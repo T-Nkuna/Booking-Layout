@@ -61,5 +61,35 @@ appContainer.append(secondaryTopPanelEle);
 //creating form
 let siteForm = new SiteForm();
 let siteFormElement = siteForm.createSiteForm();
-appContainer.appendChild(siteFormElement);
+let formContainer = document.createElement("div");
+let formButtonsContainer = document.createElement("div");
+formButtonsContainer.classList.add("form-buttons-container");
+formContainer.classList.add("form-container");
+
+let formButtons = [
+    {text:"FLIGHTS",iconClass:"fas fa-plane"},
+    {text:"HOTELS",iconClass:"fas fa-building"},
+    {text:"FLIGHTS + HOTELS",iconClass:""},
+    {text:"HOLIDAYS",iconClass:"fas fa-archive"},
+].map((btnSchemaItem,index)=>{
+    let cssOptions = {backgroundColor:"rgb(8, 20, 38)",color:"white",border:"none"};
+    if(btnSchemaItem.text=="FLIGHTS"){
+        cssOptions = Object.assign({},cssOptions,{backgroundColor:"maroon"});
+    }
+    else
+    {
+        cssOptions = Object.assign({},cssOptions,{border:"none",borderLeft:"1px solid gray"});
+    }
+    return (new IconButton(btnSchemaItem.text,btnSchemaItem.iconClass,cssOptions)).createElement();
+});
+
+formButtons.forEach(btn=>formButtonsContainer.appendChild(btn));
+formContainer.appendChild(formButtonsContainer);
+formContainer.appendChild(siteFormElement);
+appContainer.appendChild(formContainer);
+
+let saveBtn = document.createElement("a");
+saveBtn.innerHTML = "Save"
+saveBtn.classList.add("save-btn")
+formButtonsContainer.querySelector("[name='FLIGHTS + HOTELS']").childNodes[1].after(saveBtn)
 

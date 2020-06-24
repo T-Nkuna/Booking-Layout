@@ -8,10 +8,12 @@ export class IconButton
 
     createElement(){
         let iconContainer = document.createElement("a");
+        iconContainer.setAttribute("name",this.text);
         iconContainer.className = "icon-button";
         iconContainer.style.color = this.cssOptions.color;
         iconContainer.style.backgroundColor = this.cssOptions.backgroundColor;
         iconContainer.style.border = this.cssOptions.border;
+        iconContainer.style.borderLeft = this.cssOptions.borderLeft;
         let icon = document.createElement("i");
         icon.className = this.iconClass;
         let textContainer = document.createElement("span");

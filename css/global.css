@@ -88,3 +88,24 @@ body
     padding:0.733em;
 }
 
+.form-container
+{
+    display:flex;
+    flex-direction: column;
+    margin: 6em 0;
+    padding:1em;
+}
+
+.form-buttons-container
+{
+    display:flex;
+}
+
+.save-btn{
+    color:white;
+    background-color:maroon;
+    padding: 0.025em 0.25em;
+    border-radius:0.25em;
+    cursor: pointer;
+    margin-left:0.25em;
+}
