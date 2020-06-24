@@ -1,0 +1,19 @@
+body
+{
+    background-image: url('../images/background.jpeg'); 
+    background-size:cover;
+}
+
+.top-panel
+{
+    display:flex;
+    justify-content: space-around;
+    color:white;
+    border-bottom:1px solid lightgray;
+    padding:1em;
+}
+
+.top-panel a
+{
+    padding:1em;
+}
