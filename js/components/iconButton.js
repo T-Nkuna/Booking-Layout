@@ -18,7 +18,7 @@ export class IconButton
         textContainer.innerHTML = this.text;
         iconContainer.appendChild(icon);
         iconContainer.append(textContainer);
-
+        this.domElement = iconContainer;
         return iconContainer;
     }
 }

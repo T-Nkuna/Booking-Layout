@@ -14,6 +14,7 @@ export class TopPanel
         [leftPanel,rightPanel].forEach(panel=>containerElement.appendChild(panel));
         this.leftOptions.forEach(leftOption=>leftPanel.appendChild(leftOption));
         this.rightOptions.forEach(rightOption=>rightPanel.appendChild(rightOption));
+        this.domElement = containerElement;
         return containerElement;
     }
 }

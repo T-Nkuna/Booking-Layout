@@ -7,7 +7,7 @@ body
 .top-panel
 {
     display:flex;
-    justify-content: space-around;
+    justify-content: space-between;
     color:white;
     border-bottom:1px solid lightgray;
     padding:1em;
@@ -27,4 +27,64 @@ body
 .icon-button span{
     margin-left:0.5em;
 } 
+
+.input-field{
+    display:flex;
+    flex-direction: column;
+}
+
+.input-field input
+{
+    padding:1em;
+    border:1px solid lightgray;
+    box-shadow: 1px 1px 2px #eeeeee;
+}
+
+.site-form{
+    max-width: 840px;
+    background-color: #eeeeee;
+    padding:2em;
+    border-top:4px solid maroon;
+
+}
+
+.site-form-header{
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.site-form-body>:nth-child(1)
+{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.site-form-body>:nth-child(2)
+{
+    display:grid;
+    grid-template-columns: auto auto auto;
+}
+
+.site-form-body>:nth-child(2), .site-form-body>:nth-child(1)
+{
+    column-gap:1em;
+    grid-column-gap: 1em;
+    margin-bottom:1em;
+}
+
+.site-form-footer{
+    display:flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.input-field-alt
+{
+    display:flex;
+}
+
+.input-field-alt input,label{
+    padding:0.733em;
+}
 

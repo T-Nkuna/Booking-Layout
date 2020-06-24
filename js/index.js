@@ -1,5 +1,6 @@
 import {TopPanel} from "./components/topPanel.js";
 import {IconButton} from "./components/iconButton.js";
+import {SiteForm} from "./components/siteForm.js"
 
 let appContainer = document.querySelector("#app-container");
 let leftOptions =[
@@ -24,7 +25,8 @@ let rightOptions = [
     icon.className = iconClass;
     iconContainer.appendChild(icon);
     return iconContainer;
-})
+});
+
 let topPanel = new TopPanel(leftOptions,rightOptions);
 
 let secondaryLeftOptions = ["Canvas"].map(text=>{
@@ -55,4 +57,9 @@ let secondaryTopPanelEle = secondaryTopPanel.createElement();
 secondaryTopPanelEle.style.alignItems = "baseline";
 appContainer.append(topPanel.createElement());
 appContainer.append(secondaryTopPanelEle);
+
+//creating form
+let siteForm = new SiteForm();
+let siteFormElement = siteForm.createSiteForm();
+appContainer.appendChild(siteFormElement);
 
