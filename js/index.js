@@ -1,8 +1,9 @@
 import {TopPanel} from "./components/topPanel.js";
+import {IconButton} from "./components/iconButton.js";
 
 let appContainer = document.querySelector("#app-container");
 let leftOptions =[
-    "Home",
+    "HOME",
     "FAQS",
     "CONTACT",
     "USD"
@@ -25,5 +26,33 @@ let rightOptions = [
     return iconContainer;
 })
 let topPanel = new TopPanel(leftOptions,rightOptions);
+
+let secondaryLeftOptions = ["Canvas"].map(text=>{
+   let h1Ele = document.createElement("h1");
+   h1Ele.innerHTML =text;
+   return h1Ele;
+});
+
+let secondaryRightOptions = [
+    {text:"HOME",iconClass:"fas fa-home"},
+    {text:"FLIGHTS",iconClass:"fas fa-plane"},
+    {text:"HOTELS",iconClass:"fas fa-building"},
+    {text:"HOLIDAYS",iconClass:"fas fa-archive"},
+    {text:"1800 105 2541", iconClass:"fas fa-phone"}
+].map(btnSchemaItem=>{
+    let cssOptions = {backgroundColor:"transparent",color:"white"};
+    if(btnSchemaItem.text=="HOME"){
+        cssOptions = Object.assign({},cssOptions,{border:"1px solid lightgray"});
+    }
+    else
+    {
+        cssOptions = Object.assign({},cssOptions,{border:"none"});
+    }
+    return (new IconButton(btnSchemaItem.text,btnSchemaItem.iconClass,cssOptions)).createElement();
+})
+let secondaryTopPanel = new TopPanel(secondaryLeftOptions,secondaryRightOptions);
+let secondaryTopPanelEle = secondaryTopPanel.createElement();
+secondaryTopPanelEle.style.alignItems = "baseline";
 appContainer.append(topPanel.createElement());
+appContainer.append(secondaryTopPanelEle);
 

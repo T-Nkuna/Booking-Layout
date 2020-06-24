@@ -17,3 +17,14 @@ body
 {
     padding:1em;
 }
+
+.icon-button
+{
+    padding:1em;
+    display: inline-block;
+    cursor: pointer;
+}
+.icon-button span{
+    margin-left:0.5em;
+} 
+
